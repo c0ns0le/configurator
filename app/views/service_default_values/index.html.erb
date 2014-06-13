@@ -1,0 +1,35 @@
+<h1>Listing service_default_values</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+      <th>Status</th>
+      <th>Deleted at</th>
+      <th>Expired at</th>
+      <th>Service</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_default_values.each do |service_default_value| %>
+      <tr>
+        <td><%= service_default_value.key %></td>
+        <td><%= service_default_value.value %></td>
+        <td><%= service_default_value.status %></td>
+        <td><%= service_default_value.deleted_at %></td>
+        <td><%= service_default_value.expired_at %></td>
+        <td><%= service_default_value.service %></td>
+        <td><%= link_to 'Show', service_default_value %></td>
+        <td><%= link_to 'Edit', edit_service_default_value_path(service_default_value) %></td>
+        <td><%= link_to 'Destroy', service_default_value, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service default value', new_service_default_value_path %>

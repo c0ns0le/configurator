@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @modified_value.key %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @modified_value.value %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @modified_value.status %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @modified_value.organization.name %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @modified_value.service %>
+</p>
+
+<%= link_to 'Edit', edit_modified_value_path(@modified_value) %> |
+<%= link_to 'Back', modified_values_path %>
