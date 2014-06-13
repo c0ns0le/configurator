@@ -1,40 +1,32 @@
+
 <h1>ServiceDefaultValues</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-        <th>Key</th>
-        <th>Value</th>
-        <th>Status</th>
-        <th>Data type</th>
-        <th>Deleted at</th>
-        <th>Expired at</th>
-        <th>Service</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
+...Testing table filtering
+<p><strong>Filter:</strong> {{tableParams.filter()|json}}
+     
+<table ng-table="tableParams" data-show-filter="true" class="table table-striped">
   <tbody>
     <tr ng-repeat="service_default_value in service_default_values">
-      <td>
+      <td data-title="'Key'" filter="{ 'key': 'text' }">
         <a href="/service_default_values/{{service_default_value.id}}">
           {{service_default_value.key}}
         </a>
       </td>
-        <td>
+        <td data-title="'Value'">
           {{service_default_value.value}}
         </td>
-        <td>
+        <td data-title="'Status'">
           {{service_default_value.status}}
         </td>
-        <td>
+        <td data-title="'Type'">
           {{service_default_value.data_type}}
         </td>
-        <td>
+        <td data-title="'Deleted At'">
           {{service_default_value.deleted_at}}
         </td>
-        <td>
+        <td data-title="'Expired At'">
           {{service_default_value.expired_at}}
         </td>
-        <td>
+        <td data-title="'Service Id'">
           {{service_default_value.service_id}}
         </td>
       <td>

@@ -15,4 +15,6 @@
 //= require_tree ./angularjs/
 //= require_tree ./bootstrap/
 //= require turbolinks
+//= require ng-table
 //= require_tree .
+

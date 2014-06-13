@@ -1,6 +1,6 @@
 root = global ? window
 
-angular.module("service_default_values", ["ngResource"]).factory "ServiceDefaultValue", ['$resource', ($resource) ->
+angular.module("service_default_values", ["ngResource", 'ngTable']).factory "ServiceDefaultValue", ['$resource', ($resource) ->
   ServiceDefaultValue = $resource("/service_default_values/:id",
     id: "@id"
   ,

@@ -1,7 +1,7 @@
 
 root = global ? window
 
-ServiceDefaultValuesIndexCtrl = ($scope, ServiceDefaultValue) ->
+ServiceDefaultValuesIndexCtrl = ($scope, ServiceDefaultValue, $filter, ngTableParams ) ->
   $scope.service_default_values = ServiceDefaultValue.query()
 
   $scope.destroy = ->
@@ -10,7 +10,25 @@ ServiceDefaultValuesIndexCtrl = ($scope, ServiceDefaultValue) ->
       @service_default_value.destroy ->
         $scope.service_default_values = _.without($scope.service_default_values, original)
         
-ServiceDefaultValuesIndexCtrl.$inject = ['$scope', 'ServiceDefaultValue'];
+  data = $scope.service_default_values
+  $scope.tableParams = new ngTableParams(
+    page: 1 # show first page
+    count: 5 # count per page -- just as a test
+    filter:
+      key: "I" # initial filter
+  ,
+    total: data.length # length of data
+    getData: ($defer, params) ->
+
+      # use build-in angular filter
+      orderedData = (if params.filter() then $filter("filter")(data, params.filter()) else data)
+      $scope.service_default_values = orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count())
+      params.total orderedData.length # set total for recalc pagination
+      $defer.resolve $scope.service_default_values
+      return
+  )
+        
+ServiceDefaultValuesIndexCtrl.$inject = ['$scope', 'ServiceDefaultValue', '$filter', 'ngTableParams'];
 
 ServiceDefaultValuesCreateCtrl = ($scope, $location, ServiceDefaultValue) ->
   $scope.save = ->
