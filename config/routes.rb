@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :config_set_values
 
   resources :config_sets
-
+  devise_for :users
   resources :modified_values
 
   resources :service_default_values
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
+  get 'switch_user' => 'switch_user#set_current_user'
+
   root 'services#index'
   
   # Example of regular route:

@@ -49,3 +49,6 @@ ConfigSetValue.create(key:'products', value:'labels', status:'enabled', deleted_
 
 ConfigSetValue.create(key:'products', value:'-labels', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:branch_1)
 ConfigSetValue.create(key:'products', value:'chocolate', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:branch_1)
+
+
+# users are seeded in seeds/users.seeds.rb

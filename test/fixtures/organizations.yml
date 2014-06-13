@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  office_type,: MyString
-  city,: MyString
-  state,: MyString
+  office_type: MyString
+  city: MyString
+  state: MyString
   organization_id: 
 
 two:
   name: MyString
-  office_type,: MyString
-  city,: MyString
-  state,: MyString
+  office_type: MyString
+  city: MyString
+  state: MyString
   organization_id: 

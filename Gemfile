@@ -40,6 +40,11 @@ group :development do
   # gem 'binding_of_caller'
 end
 
+gem "seedbank"
+
+gem 'devise', '~> 3.0.4'
+gem "switch_user"
+
 # group :development, :test do
 #   gem 'rspec-rails'
 #   gem 'faker'
