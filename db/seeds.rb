@@ -19,11 +19,33 @@ ServiceDefaultValue.create(key:'port', value:'127.0.0.1', status:'enabled', dele
 ServiceDefaultValue.create(key:'member_number', value:'27000', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: arco.id)
 ServiceDefaultValue.create(key:'security_code', value:'1111111', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: arco.id)
 ServiceDefaultValue.create(key:'scores', value:'Fico,Vantage', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: arco.id)
-
 ServiceDefaultValue.create(key:'ip_address', value:'127.0.0.1', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: sbe.id)
 ServiceDefaultValue.create(key:'port', value:'127.0.0.1', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: sbe.id)
 ServiceDefaultValue.create(key:'service_code', value:'27000', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: sbe.id)
 ServiceDefaultValue.create(key:'transaction_id', value:'1111111', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: sbe.id)
 ServiceDefaultValue.create(key:'security_code', value:'Fico,Vantage', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: sbe.id)
-
 ModifiedValue.create(key:'security_code', value:'sometihng_else', organization_id:branch_1.id, service_id:sbe.id)
+
+
+arco = ConfigSet.create(name: 'arco', config_type: 'service')
+sbe = ConfigSet.create(name: 'sbe', config_type: 'service')
+product = ConfigSet.create(name: 'product', config_type: 'list')
+
+ConfigSetValue.create(key:'ip_address', value:'127.0.0.1', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: arco.id, organization_id: nil)
+ConfigSetValue.create(key:'port', value:'127.0.0.1', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: arco.id, organization_id: nil)
+ConfigSetValue.create(key:'member_number', value:'27000', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: arco.id, organization_id: nil)
+ConfigSetValue.create(key:'security_code', value:'1111111', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: arco.id, organization_id: nil)
+ConfigSetValue.create(key:'scores', value:'Fico,Vantage', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: arco.id, organization_id: nil)
+ConfigSetValue.create(key:'ip_address', value:'127.0.0.1', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: sbe.id, organization_id: nil)
+ConfigSetValue.create(key:'port', value:'127.0.0.1', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: sbe.id, organization_id: nil)
+ConfigSetValue.create(key:'service_code', value:'27000', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: sbe.id, organization_id: nil)
+ConfigSetValue.create(key:'transaction_id', value:'1111111', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: sbe.id, organization_id: nil)
+ConfigSetValue.create(key:'security_code', value:'Fico,Vantage', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: sbe.id, organization_id: nil)
+
+ConfigSetValue.create(key:'products', value:'paper', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:nil)
+ConfigSetValue.create(key:'products', value:'binders', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:nil)
+ConfigSetValue.create(key:'products', value:'envelopes', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:nil)
+ConfigSetValue.create(key:'products', value:'labels', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:nil)
+
+ConfigSetValue.create(key:'products', value:'-labels', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:branch_1)
+ConfigSetValue.create(key:'products', value:'chocolate', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:branch_1)

@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612212544) do
+ActiveRecord::Schema.define(version: 20140613230438) do
+
+  create_table "config_set_values", force: true do |t|
+    t.string   "key"
+    t.string   "value"
+    t.string   "status"
+    t.string   "data_type"
+    t.integer  "config_set_id"
+    t.integer  "organization_id"
+    t.datetime "deleted_at"
+    t.datetime "expired_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "config_set_values", ["config_set_id"], name: "index_config_set_values_on_config_set_id"
+  add_index "config_set_values", ["organization_id"], name: "index_config_set_values_on_organization_id"
+
+  create_table "config_sets", force: true do |t|
+    t.string   "name"
+    t.string   "config_type"
+    t.datetime "deleted_at"
+    t.datetime "expired_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+  end
 
   create_table "modified_values", force: true do |t|
     t.string   "key"

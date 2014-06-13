@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @config_set.name %>
+</p>
+
+<p>
+  <strong>Config type:</strong>
+  <%= @config_set.config_type %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @config_set.deleted_at %>
+</p>
+
+<p>
+  <strong>Expired at:</strong>
+  <%= @config_set.expired_at %>
+</p>
+
+<%= link_to 'Edit', edit_config_set_path(@config_set) %> |
+<%= link_to 'Back', config_sets_path %>

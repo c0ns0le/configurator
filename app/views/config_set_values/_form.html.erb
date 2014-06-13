@@ -1,0 +1,49 @@
+<%= form_for(@config_set_value) do |f| %>
+  <% if @config_set_value.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@config_set_value.errors.count, "error") %> prohibited this config_set_value from being saved:</h2>
+
+      <ul>
+      <% @config_set_value.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :key %><br>
+    <%= f.text_field :key %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :data_type %><br>
+    <%= f.text_field :data_type %>
+  </div>
+  <div class="field">
+    <%= f.label :config_set_id %><br>
+    <%= f.text_field :config_set_id %>
+  </div>
+  <div class="field">
+    <%= f.label :organization_id %><br>
+    <%= f.text_field :organization_id %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted_at %><br>
+    <%= f.datetime_select :deleted_at %>
+  </div>
+  <div class="field">
+    <%= f.label :expired_at %><br>
+    <%= f.datetime_select :expired_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

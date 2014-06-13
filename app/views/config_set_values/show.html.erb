@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @config_set_value.key %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @config_set_value.value %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @config_set_value.status %>
+</p>
+
+<p>
+  <strong>Data type:</strong>
+  <%= @config_set_value.data_type %>
+</p>
+
+<p>
+  <strong>Config set:</strong>
+  <%= @config_set_value.config_set_id %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @config_set_value.organization_id %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @config_set_value.deleted_at %>
+</p>
+
+<p>
+  <strong>Expired at:</strong>
+  <%= @config_set_value.expired_at %>
+</p>
+
+<%= link_to 'Edit', edit_config_set_value_path(@config_set_value) %> |
+<%= link_to 'Back', config_set_values_path %>

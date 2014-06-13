@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :config_set_values
+
+  resources :config_sets
+
   resources :modified_values
 
   resources :service_default_values
