@@ -35,6 +35,9 @@ thisApp = angular.module("ConfiguratorClient", ['ngCookies', 'service_default_va
   ).when("/organizations", 
     controller: OrganizationsIndexCtrl
     templateUrl: '<%= asset_path("organizations/index.html") %>'
+  ).when("/organizations/tree", 
+    controller: OrganizationsIndexCtrl
+    templateUrl: '<%= asset_path("organizations/tree.html") %>'
   ).when("/organizations/new",
     controller: OrganizationsCreateCtrl
     templateUrl: '<%= asset_path("organizations/new.html") %>'
