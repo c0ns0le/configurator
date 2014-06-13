@@ -1,0 +1,134 @@
+<form name="editServiceDefaultValue">
+  <fieldset>
+    <legend>
+      Edit Service Default Value
+    </legend>
+      <div class="control-group">
+        <label class="control-label">
+          Key
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="service_default_value[key]"
+                   ng-model="service_default_value.key"
+                   class="text_field"
+                   required>
+          <span ng-show="editServiceDefaultValue.key.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Value
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="service_default_value[value]"
+                   ng-model="service_default_value.value"
+                   class="text_field"
+                   required>
+          <span ng-show="editServiceDefaultValue.value.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Status
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="service_default_value[status]"
+                   ng-model="service_default_value.status"
+                   class="text_field"
+                   required>
+          <span ng-show="editServiceDefaultValue.status.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Data Type
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="service_default_value[data_type]"
+                   ng-model="service_default_value.data_type"
+                   class="text_field"
+                   required>
+          <span ng-show="editServiceDefaultValue.data_type.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Deleted At
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="service_default_value[deleted_at]"
+                   ng-model="service_default_value.deleted_at"
+                   class="text_field"
+                   required>
+          <span ng-show="editServiceDefaultValue.deleted_at.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Expired At
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="service_default_value[expired_at]"
+                   ng-model="service_default_value.expired_at"
+                   class="text_field"
+                   required>
+          <span ng-show="editServiceDefaultValue.expired_at.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Service
+        </label>
+        <div class="controls">
+            <input type="number"
+                   name="service_default_value[service_id]"
+                   ng-model="service_default_value.service_id"
+                   class="number_field"
+                   required>
+          <span ng-show="editServiceDefaultValue.service_id.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+    <div class="form-actions">
+      <button class="btn btn-success" ng-click="save()"
+        ng-disabled="isClean() || editServiceDefaultValue.$invalid">
+        Save
+      </button>
+      <button ng-click="destroy()"
+              ng-show="service_default_value.id"
+              class="btn btn-danger">
+              <i class="icon-trash"></i>Delete
+      </button>
+      <a href="/service_default_values" class="btn">
+        Back to service_default_values
+      </a>
+    </div>
+  </fieldset>
+</form>
+

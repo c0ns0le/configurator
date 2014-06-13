@@ -1,0 +1,40 @@
+<h1>Organization</h1>
+
+<p>
+  <b>Name</b><br>
+  {{organization.name}}
+</p>
+
+<p>
+  <b>Office type</b><br>
+  {{organization.office_type}}
+</p>
+
+<p>
+  <b>City</b><br>
+  {{organization.city}}
+</p>
+
+<p>
+  <b>State</b><br>
+  {{organization.state}}
+</p>
+
+<p>
+  <b>Organization</b><br>
+  {{organization.organization_id}}
+</p>
+
+<div class="form-actions">
+  <a href="/organizations/{{organization.id}}/edit"
+    class="btn btn-primary"><i class="icon-edit"></i>
+    Edit Organization
+  </a>
+  <button ng-click="destroy()" class="btn btn-danger">
+    <i class="icon-trash"></i> Delete
+  </button>
+  <a href="/organizations" class="btn">
+    Back to organizations
+  </a>
+</div>
+

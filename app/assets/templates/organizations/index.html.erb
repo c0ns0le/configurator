@@ -1,0 +1,49 @@
+<h1>Organizations</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>Office type</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Organization</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="organization in organizations">
+      <td>
+        <a href="/organizations/{{organization.id}}">
+          {{organization.name}}
+        </a>
+      </td>
+        <td>
+          {{organization.office_type}}
+        </td>
+        <td>
+          {{organization.city}}
+        </td>
+        <td>
+          {{organization.state}}
+        </td>
+        <td>
+          {{organization.organization_id}}
+        </td>
+      <td>
+        <a href="/organizations/{{organization.id}}/edit"
+          class="btn btn-primary"><i class="icon-edit"></i>
+          Edit
+        </a>
+        <button ng-click="destroy()" class="btn btn-danger">
+          <i class="icon-trash"></i> Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a href='/organizations/new' class="btn btn-primary">
+    <i class="icon-plus"></i>New
+  </a>
+</p>

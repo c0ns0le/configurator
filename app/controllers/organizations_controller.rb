@@ -1,4 +1,5 @@
 class OrganizationsController < ApplicationController
+respond_to :json
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
 
   # GET /organizations

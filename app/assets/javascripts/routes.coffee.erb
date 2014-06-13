@@ -1,0 +1,63 @@
+root = global ? window
+angular = root.angular
+
+thisApp = angular.module("ConfiguratorClient", ['ngCookies', 'service_default_values', 'organizations', 'modified_values', 'services']).config(['$routeProvider', '$locationProvider' , 
+($routeProvider, $locationProvider) ->
+  #$locationProvider.hashPrefix('');
+  $locationProvider.html5Mode true
+  $routeProvider.when("/",
+    controller: "WelcomeCtrl"
+    templateUrl: "<%= asset_path('welcome/index.html') %>"
+  ).when("/services", 
+    controller: ServicesIndexCtrl
+    templateUrl: '<%= asset_path("services/index.html") %>'
+  ).when("/services/new",
+    controller: ServicesCreateCtrl
+    templateUrl: '<%= asset_path("services/new.html") %>'
+  ).when("/services/:id",
+    controller: ServicesShowCtrl
+    templateUrl: '<%= asset_path("services/show.html") %>'
+  ).when("/services/:id/edit",
+    controller: ServicesEditCtrl
+    templateUrl: '<%= asset_path("services/edit.html") %>'
+  ).when("/modified_values", 
+    controller: ModifiedValuesIndexCtrl
+    templateUrl: '<%= asset_path("modified_values/index.html") %>'
+  ).when("/modified_values/new",
+    controller: ModifiedValuesCreateCtrl
+    templateUrl: '<%= asset_path("modified_values/new.html") %>'
+  ).when("/modified_values/:id",
+    controller: ModifiedValuesShowCtrl
+    templateUrl: '<%= asset_path("modified_values/show.html") %>'
+  ).when("/modified_values/:id/edit",
+    controller: ModifiedValuesEditCtrl
+    templateUrl: '<%= asset_path("modified_values/edit.html") %>'
+  ).when("/organizations", 
+    controller: OrganizationsIndexCtrl
+    templateUrl: '<%= asset_path("organizations/index.html") %>'
+  ).when("/organizations/new",
+    controller: OrganizationsCreateCtrl
+    templateUrl: '<%= asset_path("organizations/new.html") %>'
+  ).when("/organizations/:id",
+    controller: OrganizationsShowCtrl
+    templateUrl: '<%= asset_path("organizations/show.html") %>'
+  ).when("/organizations/:id/edit",
+    controller: OrganizationsEditCtrl
+    templateUrl: '<%= asset_path("organizations/edit.html") %>'
+  ).when("/service_default_values", 
+    controller: ServiceDefaultValuesIndexCtrl
+    templateUrl: '<%= asset_path("service_default_values/index.html") %>'
+  ).when("/service_default_values/new",
+    controller: ServiceDefaultValuesCreateCtrl
+    templateUrl: '<%= asset_path("service_default_values/new.html") %>'
+  ).when("/service_default_values/:id",
+    controller: ServiceDefaultValuesShowCtrl
+    templateUrl: '<%= asset_path("service_default_values/show.html") %>'
+  ).when("/service_default_values/:id/edit",
+    controller: ServiceDefaultValuesEditCtrl
+    templateUrl: '<%= asset_path("service_default_values/edit.html") %>'
+  ).otherwise redirectTo: "/"
+])
+
+root.thisApp = thisApp
+

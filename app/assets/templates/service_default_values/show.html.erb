@@ -1,0 +1,50 @@
+<h1>Service Default Value</h1>
+
+<p>
+  <b>Key</b><br>
+  {{service_default_value.key}}
+</p>
+
+<p>
+  <b>Value</b><br>
+  {{service_default_value.value}}
+</p>
+
+<p>
+  <b>Status</b><br>
+  {{service_default_value.status}}
+</p>
+
+<p>
+  <b>Data type</b><br>
+  {{service_default_value.data_type}}
+</p>
+
+<p>
+  <b>Deleted at</b><br>
+  {{service_default_value.deleted_at}}
+</p>
+
+<p>
+  <b>Expired at</b><br>
+  {{service_default_value.expired_at}}
+</p>
+
+<p>
+  <b>Service</b><br>
+  {{service_default_value.service_id}}
+</p>
+
+<div class="form-actions">
+  <a href="/service_default_values/{{service_default_value.id}}/edit"
+    class="btn btn-primary"><i class="icon-edit"></i>
+    Edit Service Default Value
+  </a>
+  <button ng-click="destroy()" class="btn btn-danger">
+    <i class="icon-trash"></i> Delete
+  </button>
+  <a href="/service_default_values" class="btn">
+    Back to service_default_values
+  </a>
+</div>
+

@@ -1,4 +1,5 @@
 class ModifiedValuesController < ApplicationController
+respond_to :json
   before_action :set_modified_value, only: [:show, :edit, :update, :destroy]
 
   # GET /modified_values

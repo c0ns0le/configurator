@@ -1,0 +1,33 @@
+<h1>Services</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="service in services">
+      <td>
+        <a href="/services/{{service.id}}">
+          {{service.name}}
+        </a>
+      </td>
+      <td>
+        <a href="/services/{{service.id}}/edit"
+          class="btn btn-primary"><i class="icon-edit"></i>
+          Edit
+        </a>
+        <button ng-click="destroy()" class="btn btn-danger">
+          <i class="icon-trash"></i> Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a href='/services/new' class="btn btn-primary">
+    <i class="icon-plus"></i>New
+  </a>
+</p>

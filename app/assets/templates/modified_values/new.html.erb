@@ -1,0 +1,100 @@
+<form name="newModifiedValue">
+  <fieldset>
+    <legend>
+      New Modified Value
+    </legend>
+      <div class="control-group">
+        <label class="control-label">
+          Key
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="modified_value[key]"
+                   ng-model="modified_value.key"
+                   class="text_field"
+                   required>
+          <span ng-show="newModifiedValue.key.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Value
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="modified_value[value]"
+                   ng-model="modified_value.value"
+                   class="text_field"
+                   required>
+          <span ng-show="newModifiedValue.value.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Status
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="modified_value[status]"
+                   ng-model="modified_value.status"
+                   class="text_field"
+                   required>
+          <span ng-show="newModifiedValue.status.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Organization
+        </label>
+        <div class="controls">
+            <input type="number"
+                   name="modified_value[organization_id]"
+                   ng-model="modified_value.organization_id"
+                   class="number_field"
+                   required>
+          <span ng-show="newModifiedValue.organization_id.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Service
+        </label>
+        <div class="controls">
+            <input type="number"
+                   name="modified_value[service_id]"
+                   ng-model="modified_value.service_id"
+                   class="number_field"
+                   required>
+          <span ng-show="newModifiedValue.service_id.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+    <div class="form-actions">
+      <button class="btn btn-success" ng-click="save()"
+        ng-disabled="isClean() || newModifiedValue.$invalid">
+        <i class="icon-save"></i> Save
+      </button>
+      <button ng-click="destroy()"
+              ng-show="modified_value.id"
+              class="btn btn-danger">
+              <i class="icon-trash"></i> Delete
+      </button>
+      <a href="/modified_values" class="btn">Back to modified_values</a>
+    </div>
+  </fieldset>
+</form>
+

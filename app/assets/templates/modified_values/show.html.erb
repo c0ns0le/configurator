@@ -1,0 +1,40 @@
+<h1>Modified Value</h1>
+
+<p>
+  <b>Key</b><br>
+  {{modified_value.key}}
+</p>
+
+<p>
+  <b>Value</b><br>
+  {{modified_value.value}}
+</p>
+
+<p>
+  <b>Status</b><br>
+  {{modified_value.status}}
+</p>
+
+<p>
+  <b>Organization</b><br>
+  {{modified_value.organization_id}}
+</p>
+
+<p>
+  <b>Service</b><br>
+  {{modified_value.service_id}}
+</p>
+
+<div class="form-actions">
+  <a href="/modified_values/{{modified_value.id}}/edit"
+    class="btn btn-primary"><i class="icon-edit"></i>
+    Edit Modified Value
+  </a>
+  <button ng-click="destroy()" class="btn btn-danger">
+    <i class="icon-trash"></i> Delete
+  </button>
+  <a href="/modified_values" class="btn">
+    Back to modified_values
+  </a>
+</div>
+

@@ -1,0 +1,100 @@
+<form name="newOrganization">
+  <fieldset>
+    <legend>
+      New Organization
+    </legend>
+      <div class="control-group">
+        <label class="control-label">
+          Name
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="organization[name]"
+                   ng-model="organization.name"
+                   class="text_field"
+                   required>
+          <span ng-show="newOrganization.name.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Office Type
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="organization[office_type]"
+                   ng-model="organization.office_type"
+                   class="text_field"
+                   required>
+          <span ng-show="newOrganization.office_type.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          City
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="organization[city]"
+                   ng-model="organization.city"
+                   class="text_field"
+                   required>
+          <span ng-show="newOrganization.city.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          State
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="organization[state]"
+                   ng-model="organization.state"
+                   class="text_field"
+                   required>
+          <span ng-show="newOrganization.state.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Organization
+        </label>
+        <div class="controls">
+            <input type="number"
+                   name="organization[organization_id]"
+                   ng-model="organization.organization_id"
+                   class="number_field"
+                   required>
+          <span ng-show="newOrganization.organization_id.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+    <div class="form-actions">
+      <button class="btn btn-success" ng-click="save()"
+        ng-disabled="isClean() || newOrganization.$invalid">
+        <i class="icon-save"></i> Save
+      </button>
+      <button ng-click="destroy()"
+              ng-show="organization.id"
+              class="btn btn-danger">
+              <i class="icon-trash"></i> Delete
+      </button>
+      <a href="/organizations" class="btn">Back to organizations</a>
+    </div>
+  </fieldset>
+</form>
+

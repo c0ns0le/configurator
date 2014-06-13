@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+respond_to :json
   before_action :set_service, only: [:show, :edit, :update, :destroy, :defaults]
 
   # GET /services

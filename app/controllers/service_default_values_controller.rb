@@ -1,4 +1,5 @@
 class ServiceDefaultValuesController < ApplicationController
+respond_to :json
   before_action :set_service_default_value, only: [:show, :edit, :update, :destroy]
 
   # GET /service_default_values

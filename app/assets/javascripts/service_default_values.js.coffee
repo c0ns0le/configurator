@@ -1,3 +1,20 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+root = global ? window
+
+angular.module("service_default_values", ["ngResource"]).factory "ServiceDefaultValue", ['$resource', ($resource) ->
+  ServiceDefaultValue = $resource("/service_default_values/:id",
+    id: "@id"
+  ,
+    update:
+      method: "PUT"
+
+    destroy:
+      method: "DELETE"
+  )
+  ServiceDefaultValue::destroy = (cb) ->
+    ServiceDefaultValue.remove
+      id: @id
+    , cb
+
+  ServiceDefaultValue
+]
+root.angular = angular
