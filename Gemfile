@@ -48,7 +48,7 @@ end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
+  gem 'rails_12factor' # so heroku will serve static assets properly
 end
 
 # Use ActiveModel has_secure_password
