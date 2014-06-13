@@ -40,6 +40,8 @@ group :development do
   # gem 'binding_of_caller'
 end
 
+gem "seedbank"
+
 gem 'devise', '~> 3.0.4'
 
 # group :development, :test do

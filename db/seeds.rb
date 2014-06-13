@@ -27,3 +27,13 @@ ServiceDefaultValue.create(key:'transaction_id', value:'1111111', status:'enable
 ServiceDefaultValue.create(key:'security_code', value:'Fico,Vantage', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', service_id: sbe.id)
 
 ModifiedValue.create(key:'security_code', value:'sometihng_else', organization_id:branch_1.id, service_id:sbe.id)
+
+
+# users are seeded in seeds/users.seeds.rb
+
+
+
+
+
+
+
