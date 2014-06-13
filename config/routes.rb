@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :modified_values
 
   resources :service_default_values
