@@ -18,5 +18,39 @@
  *= require ng-table
  */
 
-body { padding-top: 60px; }
-.center {text-align: center;}
+/* <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'> */
+
+body {
+	font-family: "Ubuntu", "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
+
+/*!   these will make it slightly less bootstrapy  */
+
+.navbar-inner {
+	background-color: #444;
+	background-image: none;
+}
+
+
+.navbar .brand {
+	text-shadow: none;
+	line-height: 36px;
+	color: #f3f3f3;
+}
+
+.navbar .nav>li>a {
+	line-height: 36px;
+	color: #f3f3f3;
+	text-decoration: none;
+	text-shadow: none;
+}
+
+.navbar .nav>li>a:hover {
+	color: #ffffff;
+}
+
+.content {
+  margin-top: 70px;
+}
