@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
+  get 'switch_user' => 'switch_user#set_current_user'
+
   root 'services#index'
   
   # Example of regular route:
