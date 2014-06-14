@@ -4,4 +4,11 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+
+
+def can_edit?
+  ['admin', 'security'].include?(self.role)
+end
+
 end

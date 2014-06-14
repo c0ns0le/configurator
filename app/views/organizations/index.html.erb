@@ -21,8 +21,12 @@
         <td><%= organization.state %></td>
         <td><%= organization.organization.try(:name) %></td>
         <td><%= link_to 'Show', organization %></td>
+
+      <% if current_user.can_edit? %>
         <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
         <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %> 
+
       </tr>
     <% end %>
   </tbody>
