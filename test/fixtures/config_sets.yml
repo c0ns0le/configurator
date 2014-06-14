@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  config_type: MyString
-  deleted_at: 2014-06-13 23:02:32
-  expired_at: 2014-06-13 23:02:32
-
-two:
-  name: MyString
-  config_type: MyString
-  deleted_at: 2014-06-13 23:02:32
-  expired_at: 2014-06-13 23:02:32
+arco:
+  name: Arco
+  config_type: service
+  status: enabled 
+  
+sbe:
+  name: SBE  
+  config_type: service
+  status: enabled 
+  
+product:
+  name: product
+  config_type: list
+  status: enabled 
+  

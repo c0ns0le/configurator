@@ -1,15 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+root:
   name: MyString
-  office_type: MyString
+  office_type: Main
   city: MyString
   state: MyString
-  organization_id: 
-
-two:
+  parent_id: null
+branch:
   name: MyString
-  office_type: MyString
+  office_type: branch
   city: MyString
   state: MyString
-  organization_id: 
+  parent: root

@@ -1,21 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  key: MyString
-  value: MyString
-  status: MyString
-  data_type: MyString
-  config_set_id: 
+host_default:
+  key: host
+  value: my_host
+  status: enabled
+  data_type: string
+  config_set: arco
   organization_id: 
-  deleted_at: 2014-06-13 23:04:11
-  expired_at: 2014-06-13 23:04:11
+  deleted_at: 
+  expired_at: 
+  published_at: 2014-06-13 23:04:11
+  tag_name: initial
 
-two:
-  key: MyString
-  value: MyString
-  status: MyString
-  data_type: MyString
-  config_set_id: 
-  organization_id: 
-  deleted_at: 2014-06-13 23:04:11
-  expired_at: 2014-06-13 23:04:11
+host_override:
+  key: host
+  value: overide_host
+  status: enabled
+  data_type: string
+  config_set: arco
+  organization: root
+  deleted_at: 
+  expired_at: 
+  published_at: 2014-06-13 23:04:11
+  tag_name: initial
+
+  
+  
