@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613230438) do
+ActiveRecord::Schema.define(version: 20140613233400) do
 
   create_table "config_set_values", force: true do |t|
     t.string   "key"
@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(version: 20140613230438) do
     t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "organization_id"
+    t.integer  "parent_id"
   end
 
-  add_index "organizations", ["organization_id"], name: "index_organizations_on_organization_id"
+  add_index "organizations", ["parent_id"], name: "index_organizations_on_parent_id"
 
   create_table "service_default_values", force: true do |t|
     t.string   "key"

@@ -1,12 +1,13 @@
 class Organization < ActiveRecord::Base
-  belongs_to :organization
+  belongs_to :parent, class_name:'Organization' 
+  has_many :children, class_name:'Organization', foreign_key: 'parent_id'
   # gets the config for a service
   def config_for(service)
     current_org = self
     org_list = [ current_org ]
-    while current_org.organization != nil 
-      org_list << current_org.organization
-      current_org = current_org.organization
+    while current_org.parent != nil 
+      org_list << current_org.parent
+      current_org = current_org.parent
     end
     settings = {}
     ServiceDefaultValue.where( service:service, status:'enabled').each do |x|
@@ -20,4 +21,22 @@ class Organization < ActiveRecord::Base
     end
     settings
   end
+  
+  def values_for(config_set)
+    settings = config_set.default_values  
+    current_org = self
+    org_list = [ current_org ]
+    while current_org.parent != nil 
+      org_list << current_org.parent
+      current_org = current_org.parent
+    end    
+    org_list.reverse.each do |org|
+      values = {}
+      ConfigSetValue.where(organization_id:org.id, config_set_id:config_set.id, status:'enabled').each do |x|
+        settings[x.key] = x.value
+      end
+    end
+    settings
+  end
+ 
 end
