@@ -48,13 +48,14 @@ class ConfigSetValueTest < ActiveSupport::TestCase
   # list stuff
   
   test "i get all the stuff" do
-    assert config_sets(product).default_values.sort == ['apple', 'bone', 'rake']
+    puts config_sets(:product).default_values
+    assert config_sets(:product).default_values['product'].sort == ['apple', 'bone', 'rake']
   end
   
   test "root can add one" do
-    assert organizations(:root).values_for(config_sets(:product)).member? 'bob'
+    assert organizations(:root).values_for(config_sets(:product))['product'].member? 'bob'
   end
   test "branch  can delete one" do
-    assert_not organizations(:branch).values_for(config_sets(:product)).member? 'bob'
+    assert_not organizations(:branch).values_for(config_sets(:product))['product'].member? 'bob'
   end
-eend
+end
