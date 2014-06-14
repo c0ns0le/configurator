@@ -9,8 +9,39 @@ class ConfigSetValue < ActiveRecord::Base
 
   def is_default?
     self.organization.nil?
-  end
-  
+  end 
+  def self.releases
+    # get all the release names
+   all_tags= []
+   ConfigSetValue.select(:tag_name).distinct.select(:published_at).where.not(tag_name:nil).order(published_at: :desc).each do |release|
+	tag = {}
+	tag['tag_name'] = release.tag_name
+        # config set
+	config_sets = {}
+        org_sets = {}
+	# there is better sql for getting this
+        ConfigSetValue.where(tag_name:release.tag_name).each do |x|
+		if x.is_default?
+			config_sets[x.config_set.name] ||= {}
+			config_sets[x.config_set.name]['name']||=x.config_set.name
+			config_sets[x.config_set.name]['tag_name']||=tag['tag_name']
+			config_sets[x.config_set.name]['config_sets']||= []
+			config_sets[x.config_set.name]['config_sets'] << x.attributes
+		else
+		  	org_sets[x.organization.name] ||= x.organization.attributes
+		  	org_sets[x.organization.name]['config_sets'] ||= []
+		  	org_sets[x.organization.name]['config_sets'] << x.attributes
+		end
+        end
+        tag['config_sets'] = []
+        tag['orgs'] = []
+	config_sets.each { |k,v| tag['config_sets'] << v }
+	org_sets.each {|k,v| tag['orgs']<<v}
+	tag['published_at'] = release.published_at
+	all_tags << tag
+   end
+   all_tags
+  end  
   def change_value(new_value)   
     case self.status
       when STATUS_PENDING_ADD
