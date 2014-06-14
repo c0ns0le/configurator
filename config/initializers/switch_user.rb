@@ -30,7 +30,8 @@ SwitchUser.setup do |config|
   # if it returns true, the switch user select box will be shown,
   # else the select box will not be shown
   # if you switch from admin to "user", the current_user param is "user"
-  config.view_guard = lambda { |current_user, request| Rails.env.development? }
+  # HACK 
+  config.view_guard = lambda { |current_user, request| true }
 
   # redirect_path is a block, it returns which page will be redirected
   # after switching a user.
