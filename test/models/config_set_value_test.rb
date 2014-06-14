@@ -48,7 +48,6 @@ class ConfigSetValueTest < ActiveSupport::TestCase
   # list stuff
   
   test "i get all the stuff" do
-    puts config_sets(:product).default_values
     assert config_sets(:product).default_values['product'].sort == ['apple', 'bone', 'rake']
   end
   
@@ -58,4 +57,16 @@ class ConfigSetValueTest < ActiveSupport::TestCase
   test "branch  can delete one" do
     assert_not organizations(:branch).values_for(config_sets(:product))['product'].member? 'bob'
   end
+  
+  test "delete an override" do
+    #find the config_set_value
+    v = ConfigSetValue.where(key:'product', value:'bob', status:'enabled', organization_id:organizations(:root).id)
+    assert v.count == 1
+    v.first.remove_config_set_key
+    assert organizations(:root).values_for(config_sets(:product))['product'].member? 'bob'
+    v.first.publish('new_tag')
+    assert organizations(:root).values_for(config_sets(:product))['product'].sort == ['apple', 'bone', 'rake']
+  end
+  
+  
 end

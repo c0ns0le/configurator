@@ -37,7 +37,7 @@ class Organization < ActiveRecord::Base
       current_org = current_org.parent
     end    
     org_list.reverse.each do |org|
-      ConfigSetValue.where(organization_id:org.id, config_set_id:config_set.id, status:'enabled').each do |x|
+      ConfigSetValue.where(organization_id:org.id, config_set_id:config_set.id, status:[ConfigSetValue::STATUS_ENABLED,ConfigSetValue::STATUS_PENDING_DELETE]).each do |x|
          case x.config_set.config_type
            when 'list' 
              settings[x.key] ||= []   # defensive programming
