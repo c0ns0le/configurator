@@ -1,0 +1,58 @@
+
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 5px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.container {
+  
+}
+
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #fff;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+
+   &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
