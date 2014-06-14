@@ -71,8 +71,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
     
-  #for static files
-  
-    # get '/api-docs/:action' => 'static/api-docs/#:action'
+
 
 end
