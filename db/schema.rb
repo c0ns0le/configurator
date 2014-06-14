@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614012638) do
+ActiveRecord::Schema.define(version: 20140614073102) do
 
   create_table "config_set_values", force: true do |t|
     t.string   "key"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20140614012638) do
     t.datetime "expired_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tag_name"
+    t.datetime "published_at"
   end
 
   add_index "config_set_values", ["config_set_id"], name: "index_config_set_values_on_config_set_id"
