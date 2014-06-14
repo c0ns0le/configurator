@@ -16,7 +16,7 @@ get '/release' =>'config_sets#release_management'
   get 'switch_user' => 'switch_user#set_current_user'
   get '/api-docs/*', :to => redirect('/api-docs')
 
-  root 'services#index'
+  root 'config_sets#index'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
