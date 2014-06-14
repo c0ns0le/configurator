@@ -9,6 +9,10 @@ class ConfigSetsController < ApplicationController
     @config_sets = ConfigSet.all
   end
 
+  def release_management
+    @config_sets = ConfigSet.all
+  end
+
   # GET /config_sets/1
   # GET /config_sets/1.json
   def show

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
+get '/release' =>'config_sets#release_management'
+
   get 'switch_user' => 'switch_user#set_current_user'
   get '/api-docs/*', :to => redirect('/api-docs')
 
