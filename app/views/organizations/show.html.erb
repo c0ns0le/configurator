@@ -22,7 +22,7 @@
 
 <p>
   <strong>Parent Organization:</strong>
-  <%= @organization.parent.try(:name) %>
+  <%= @organization.parent.try(:list_name) %>
 </p>
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |

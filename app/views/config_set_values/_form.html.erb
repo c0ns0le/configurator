@@ -28,12 +28,12 @@
     <%= f.text_field :data_type %>
   </div>
   <div class="field">
-    <%= f.label :config_set_id %><br>
-    <%= f.text_field :config_set_id %>
+    <%= f.label :config_set %><br>
+    <%= f.collection_select(:config_set_id, ConfigSet.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :organization_id %><br>
-    <%= f.text_field :organization_id %>
+    <%= f.label :organization %><br>
+    <%= f.collection_select(:organization_id, Organization.all, :id, :list_name, {:include_blank => 'default for ConfigSet'})  %>
   </div>
   <div class="field">
     <%= f.label :deleted_at %><br>

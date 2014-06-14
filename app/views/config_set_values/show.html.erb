@@ -22,12 +22,12 @@
 
 <p>
   <strong>Config set:</strong>
-  <%= @config_set_value.config_set_id %>
+  <%= @config_set_value.config_set.try(:name) %>
 </p>
 
 <p>
   <strong>Organization:</strong>
-  <%= @config_set_value.organization_id %>
+  <%= @config_set_value.organization.try(:list_name) %>
 </p>
 
 <p>

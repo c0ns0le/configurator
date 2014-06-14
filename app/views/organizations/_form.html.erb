@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :office_type %><br>
-    <%= f.text_field :office_type %>
+    <%= f.select(:office_type, options_for_select(['head office', 'branch office'])) %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.select( :state, options_for_select(us_states) ) %>
   </div>
   <div class="field">
     <%= f.label :parent_organization %><br>
-    <%= f.text_field :parent_id %>
+    <%= f.collection_select(:parent_id, Organization.all, :id, :list_name, {:prompt => true})  %>
   </div>
   <div class="actions">
     <%= f.submit %>

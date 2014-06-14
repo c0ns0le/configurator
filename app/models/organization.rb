@@ -1,6 +1,11 @@
 class Organization < ActiveRecord::Base
   belongs_to :parent, class_name:'Organization' 
   has_many :children, class_name:'Organization', foreign_key: 'parent_id'
+  
+  def list_name
+    "#{name}-#{city}"
+  end
+
   # gets the config for a service
   def config_for(service)
     current_org = self
