@@ -1,0 +1,111 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "organizations",
+  "apis": [
+    {
+      "path": "organizations",
+      "operations": [
+        {
+          "summary": "Fetches a list of Organizations",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "string"
+            },
+            {
+              "code": 406,
+              "message": "string"
+            }
+          ],
+          "method": "get",
+          "nickname": "Organizations#index"
+        }
+      ]
+    },
+    {
+      "path": "organizations",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication-Token",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "method": "post",
+          "nickname": "Organizations#create"
+        }
+      ]
+    },
+    {
+      "path": "organizations/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Organization Id",
+              "required": true
+            }
+          ],
+          "summary": "Fetches a single Organization",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "string"
+            },
+            {
+              "code": 406,
+              "message": "string"
+            }
+          ],
+          "method": "get",
+          "nickname": "Organizations#show"
+        }
+      ]
+    },
+    {
+      "path": "organizations/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication-Token",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "method": "patch",
+          "nickname": "Organizations#update"
+        }
+      ]
+    },
+    {
+      "path": "organizations/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication-Token",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "method": "put",
+          "nickname": "Organizations#update"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 class ConfigSetsController < ApplicationController
   before_action :set_config_set, only: [:show, :edit, :update, :destroy]
 
+  swagger_controller :set_config_sets, "ConfigSets"
+
   # GET /config_sets
   # GET /config_sets.json
   def index

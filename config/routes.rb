@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   
   get 'switch_user' => 'switch_user#set_current_user'
+  get '/api-docs/*', :to => redirect('/api-docs')
 
   root 'services#index'
   
@@ -69,4 +70,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+    
+  #for static files
+  
+    # get '/api-docs/:action' => 'static/api-docs/#:action'
+
 end

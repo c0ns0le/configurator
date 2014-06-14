@@ -1,0 +1,19 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "apis": [
+    {
+      "path": "api_docs/config_set_values.{format}",
+      "description": "ConfigSetValues"
+    },
+    {
+      "path": "api_docs/config_sets.{format}",
+      "description": "ConfigSets"
+    },
+    {
+      "path": "api_docs/organizations.{format}",
+      "description": "Organizations"
+    }
+  ]
+}

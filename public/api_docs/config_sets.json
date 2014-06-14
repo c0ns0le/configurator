@@ -1,0 +1,111 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "config_sets",
+  "apis": [
+    {
+      "path": "config_sets",
+      "operations": [
+        {
+          "summary": "Fetches a list of ConfigSets",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "string"
+            },
+            {
+              "code": 406,
+              "message": "string"
+            }
+          ],
+          "method": "get",
+          "nickname": "ConfigSets#index"
+        }
+      ]
+    },
+    {
+      "path": "config_sets",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication-Token",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "method": "post",
+          "nickname": "ConfigSets#create"
+        }
+      ]
+    },
+    {
+      "path": "config_sets/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "ConfigSet Id",
+              "required": true
+            }
+          ],
+          "summary": "Fetches a single ConfigSet",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "string"
+            },
+            {
+              "code": 406,
+              "message": "string"
+            }
+          ],
+          "method": "get",
+          "nickname": "ConfigSets#show"
+        }
+      ]
+    },
+    {
+      "path": "config_sets/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication-Token",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "method": "patch",
+          "nickname": "ConfigSets#update"
+        }
+      ]
+    },
+    {
+      "path": "config_sets/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication-Token",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "method": "put",
+          "nickname": "ConfigSets#update"
+        }
+      ]
+    }
+  ]
+}

@@ -32,10 +32,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 #   gem 'selenium-webdriver'
 # end
 
+
 group :development do
   gem 'sqlite3'
   gem 'quiet_assets'
   gem 'spring'
+  
   # gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -45,6 +47,7 @@ gem "seedbank"
 
 gem 'devise', '~> 3.0.4'
 gem "switch_user"
+gem "swagger-docs"
 
 
 # group :development, :test do
