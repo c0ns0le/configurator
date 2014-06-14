@@ -19,7 +19,7 @@
         <td><%= organization.office_type %></td>
         <td><%= organization.city %></td>
         <td><%= organization.state %></td>
-        <td><%= organization.organization.try(:name) %></td>
+        <td><%= organization.parent.try(:name) %></td>
         <td><%= link_to 'Show', organization %></td>
 
       <% if current_user.can_edit? %>
