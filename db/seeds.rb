@@ -6,25 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-arco = Service.create(name: "arco")
-sbe = Service.create(name: "sbe")
+
 root_org = Organization.create(name: 'Dundar Mifflan' , office_type: 'head office' , city: 'scranton', state: 'pa', parent_id: nil)
 branch_1 = Organization.create(name: 'Dundar Mifflan' , office_type: 'branch office' , city: 'new york', state: 'ny', parent_id: root_org.id)
 Organization.create(name: 'Dundar Mifflan' , office_type: 'branch office' , city: 'arkon', state: 'oh', parent_id: root_org.id)
 Organization.create(name: 'Dundar Mifflan' , office_type: 'branch office' , city: 'nashua', state: 'nh', parent_id: root_org.id)
 Organization.create(name: 'Dundar Mifflan' , office_type: 'branch office' , city: 'ultica', state: 'ny', parent_id: branch_1.id)
 Organization.create(name: 'Dundar Mifflan' , office_type: 'branch office' , city: 'albany', state: 'ny', parent_id: branch_1.id)
-ServiceDefaultValue.create(key:'ip_address', value:'127.0.0.1', status:'enabled',  data_type:'string', service_id: arco.id)
-ServiceDefaultValue.create(key:'port', value:'127.0.0.1', status:'enabled',  data_type:'string', service_id: arco.id)
-ServiceDefaultValue.create(key:'member_number', value:'27000', status:'enabled',  data_type:'string', service_id: arco.id)
-ServiceDefaultValue.create(key:'security_code', value:'1111111', status:'enabled',  data_type:'string', service_id: arco.id)
-ServiceDefaultValue.create(key:'scores', value:'Fico,Vantage', status:'enabled',  data_type:'string', service_id: arco.id)
-ServiceDefaultValue.create(key:'ip_address', value:'127.0.0.1', status:'enabled',  data_type:'string', service_id: sbe.id)
-ServiceDefaultValue.create(key:'port', value:'127.0.0.1', status:'enabled',  data_type:'string', service_id: sbe.id)
-ServiceDefaultValue.create(key:'service_code', value:'27000', status:'enabled',  data_type:'string', service_id: sbe.id)
-ServiceDefaultValue.create(key:'transaction_id', value:'1111111', status:'enabled',  data_type:'string', service_id: sbe.id)
-ServiceDefaultValue.create(key:'security_code', value:'Fico,Vantage', status:'enabled',  data_type:'string', service_id: sbe.id)
-ModifiedValue.create(key:'security_code', value:'sometihng_else', organization_id:branch_1.id, service_id:sbe.id)
 
 
 arco = ConfigSet.create(name: 'arco', config_type: 'service')
@@ -49,5 +37,5 @@ ConfigSetValue.create(key:'products', value:'labels', status:'enabled', deleted_
 
 ConfigSetValue.create(key:'products', value:'-labels', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:branch_1)
 ConfigSetValue.create(key:'products', value:'chocolate', status:'enabled', deleted_at: nil, expired_at:nil, data_type:'string', config_set_id:product.id, organization_id:branch_1)
-ConfigSetValue.create(key:'security_code', value:'overide', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: sbe.id, organization_id: 2, published_at:Time.now, tag:'my_tag')
+ConfigSetValue.create(key:'security_code', value:'overide', status:'enabled', deleted_at: nil, expired_at: nil,  data_type:'string', config_set_id: sbe.id, organization_id: 2, published_at:Time.now, tag_name:'my_tag')
 # users are seeded in seeds/users.seeds.rb

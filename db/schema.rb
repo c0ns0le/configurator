@@ -41,19 +41,6 @@ ActiveRecord::Schema.define(version: 20140614073102) do
     t.string   "status"
   end
 
-  create_table "modified_values", force: true do |t|
-    t.string   "key"
-    t.string   "value"
-    t.string   "status"
-    t.integer  "organization_id"
-    t.integer  "service_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "modified_values", ["organization_id"], name: "index_modified_values_on_organization_id"
-  add_index "modified_values", ["service_id"], name: "index_modified_values_on_service_id"
-
   create_table "organizations", force: true do |t|
     t.string   "name"
     t.string   "office_type"
@@ -65,26 +52,6 @@ ActiveRecord::Schema.define(version: 20140614073102) do
   end
 
   add_index "organizations", ["parent_id"], name: "index_organizations_on_parent_id"
-
-  create_table "service_default_values", force: true do |t|
-    t.string   "key"
-    t.string   "value"
-    t.string   "status"
-    t.string   "data_type"
-    t.string   "deleted_at"
-    t.string   "expired_at"
-    t.integer  "service_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "service_default_values", ["service_id"], name: "index_service_default_values_on_service_id"
-
-  create_table "services", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

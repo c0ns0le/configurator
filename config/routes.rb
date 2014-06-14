@@ -3,13 +3,7 @@ Rails.application.routes.draw do
 
   resources :config_sets
   devise_for :users
-  resources :modified_values
-
-  resources :service_default_values
-
   resources :organizations
-
-  resources :services
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
