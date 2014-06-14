@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :config_type %><br>
-    <%= f.text_field :config_type %>
+    <%= f.select :config_type, options_for_select(['service', 'list'] , "list")%>
   </div>
   <div class="field">
     <%= f.label :deleted_at %><br>

@@ -49,5 +49,5 @@ SwitchUser.setup do |config|
 
   # switch_back allows you to switch back to a previously selected user. See
   # README for more details.
-  config.switch_back = true
+  config.switch_back = false
 end
