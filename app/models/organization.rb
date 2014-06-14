@@ -31,12 +31,20 @@ class Organization < ActiveRecord::Base
       current_org = current_org.parent
     end    
     org_list.reverse.each do |org|
-      values = {}
       ConfigSetValue.where(organization_id:org.id, config_set_id:config_set.id, status:'enabled').each do |x|
-        settings[x.key] = x.value
+         case x.config_set.config_type
+           when 'list' 
+             settings[x.key] ||= []   # defensive programming
+             if x.value =~ /^-.*/ 
+               settings[x.key].delete(x.value[1..-1])
+             else
+               settings[x.key] << x.value unless settings[x.key].member? x.value
+             end
+           else
+             settings[x.key]=x.value
+           end
       end
     end
     settings
   end
- 
 end
