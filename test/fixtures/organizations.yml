@@ -5,7 +5,7 @@ root:
   office_type: Main
   city: MyString
   state: MyString
-  parent_id: null
+  parent_id: 
 branch:
   name: MyString
   office_type: branch

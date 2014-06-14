@@ -26,3 +26,62 @@ host_override:
 
   
   
+list_1_default:
+  key: product
+  value: apple
+  status: enabled
+  data_type: string
+  config_set: product
+  organization_id:
+  deleted_at: 
+  expired_at: 
+  published_at: 2014-06-13 23:04:11
+  tag_name: initial
+
+list_2_default:
+  key: product
+  value: bone
+  status: enabled
+  data_type: string
+  config_set: product
+  organization_id:
+  deleted_at: 
+  expired_at: 
+  published_at: 2014-06-13 23:04:11
+  tag_name: initial
+
+list_3_default:
+  key: product
+  value: rake
+  status: enabled
+  data_type: string
+  config_set: product
+  organization_id:
+  deleted_at: 
+  expired_at: 
+  published_at: 2014-06-13 23:04:11
+  tag_name: initial
+
+list_override:  
+  key: product
+  value: bob
+  status: enabled
+  data_type: string
+  config_set: product
+  organization: root
+  deleted_at: 
+  expired_at: 
+  published_at: 2014-06-13 23:04:11
+  tag_name: initial
+
+list_delete:  
+  key: product
+  value: -bob
+  status: enabled
+  data_type: string
+  config_set: product
+  organization: branch
+  deleted_at: 
+  expired_at: 
+  published_at: 2014-06-13 23:04:11
+  tag_name: initial

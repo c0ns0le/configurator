@@ -32,8 +32,6 @@ class ConfigSetValueTest < ActiveSupport::TestCase
   
    test "remove default key" do
     csval = config_set_values(:host_default)
-     puts csval.config_set.default_values
-     puts ConfigSetValue.all.map &:to_yaml
     csval.remove_config_set_key
     assert csval.status == ConfigSetValue::STATUS_PENDING_DELETE  
     csval.publish('tag_name')
@@ -42,10 +40,21 @@ class ConfigSetValueTest < ActiveSupport::TestCase
     assert_not csval.deleted_at.nil?
     assert csval.expired_at > Time.now + 1.days
      
-     puts csval.config_set.default_values
     # when a defult key is removed, it should warn..
      assert csval.config_set.default_values[csval.key]
      assert csval.config_set.default_values['warning']
   end
+
+  # list stuff
   
-end
+  test "i get all the stuff" do
+    assert config_sets(product).default_values.sort == ['apple', 'bone', 'rake']
+  end
+  
+  test "root can add one" do
+    assert organizations(:root).values_for(config_sets(:product)).member? 'bob'
+  end
+  test "branch  can delete one" do
+    assert_not organizations(:branch).values_for(config_sets(:product)).member? 'bob'
+  end
+eend
