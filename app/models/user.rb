@@ -5,10 +5,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
-
 def can_edit?
   ['admin', 'security'].include?(self.role)
 end
 
+def can_rollback?
+  ['psdev'].include?(self.role)
+end
 end

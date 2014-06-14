@@ -11,8 +11,8 @@ end
 
 
 users = [
-  {name:"admin", role: :admin},
-  {name:"view", role: :view_only},
-  {name:"security", role: :security}
+  {name:"psdev-user", role: :psdev}
+ # {name:"view", role: :view_only},
+ # {name:"security", role: :security}
 ]
 users.each {|user| create_user(user)}
