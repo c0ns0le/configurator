@@ -37,8 +37,8 @@ group :development do
   gem 'quiet_assets'
   gem 'spring'
   # gem 'annotate'
-  # gem 'better_errors'
-  # gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 gem "seedbank"
