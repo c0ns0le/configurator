@@ -20,12 +20,8 @@
     <%= f.text_field :value %>
   </div>
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
     <%= f.label :data_type %><br>
-    <%= f.text_field :data_type %>
+    <%= f.select( :data_type, options_for_select(['string'])) %>
   </div>
   <div class="field">
     <%= f.label :config_set %><br>

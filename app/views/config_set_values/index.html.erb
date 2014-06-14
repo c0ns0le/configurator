@@ -22,8 +22,10 @@
         <td><%= config_set_value.value %></td>
         <td><%= config_set_value.status %></td>
         <td><%= config_set_value.data_type %></td>
-        <td><%= config_set_value.config_set_id %></td>
-        <td><%= config_set_value.organization.try(:list_name) %></td>
+        <td title="<%= config_set_value.config_set_id %>"><%= config_set_value.config_set.try(:name) %></td>
+        <td title="<%=config_set_value.organization_id%>">
+          <%= link_to config_set_value.organization.try(:list_name) , organization_path(config_set_value.organization_id) if config_set_value.organization %>
+        </td>
         <td><%= config_set_value.deleted_at %></td>
         <td><%= config_set_value.expired_at %></td>
         <td><%= link_to 'Show', config_set_value %></td>
