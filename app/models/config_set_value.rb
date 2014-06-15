@@ -10,6 +10,7 @@ class ConfigSetValue < ActiveRecord::Base
   def is_default?
     self.organization.nil?
   end 
+  
   def self.releases
     # get all the release names
    all_tags= []
@@ -41,7 +42,8 @@ class ConfigSetValue < ActiveRecord::Base
 	all_tags << tag
    end
    all_tags
-  end  
+  end
+
   def change_value(new_value)   
     case self.status
       when STATUS_PENDING_ADD
