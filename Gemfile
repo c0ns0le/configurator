@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # end
 
 
+
 group :development do
   gem 'sqlite3'
   gem 'quiet_assets'
@@ -59,6 +60,7 @@ gem "swagger-docs"
 group :production do
   gem 'pg'
   gem 'rails_12factor' # so heroku will serve static assets properly
+  gem 'newrelic_rpm'
 end
 
 # Use ActiveModel has_secure_password
