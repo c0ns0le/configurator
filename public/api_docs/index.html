@@ -85,6 +85,25 @@
 
 </div>
 
+  <script type="text/javascript">
+var KATO_ROOM_WHEN_CLOSED_BUTTON_TEXT = 'Chat With Us';
+var KATO_ROOM_WHEN_OPEN_BUTTON_TEXT = 'Hide';
+if (!window.name) { window.name = Math.random().toString(36).substring(2); }
+var katoReadCookie = function (name) { name = name + '='; var ca = document.cookie.split(';'); for (var i = 0; i < ca.length; i++) { var c = ca[i]; while (c.charAt(0) == ' ') c = c.substring(1, c.length); if (c.indexOf(name) == 0) return c.substring(name.length, c.length); } return null; };
+var toggleKatoRoom = function () { var el = document.getElementById('katoButton'); var doOpen = function(container) { el.innerHTML = KATO_ROOM_WHEN_OPEN_BUTTON_TEXT; container.style.display = 'block'; katoContainer.style.width = '40%'; katoContainer.style['min-width'] = '300px'; document.cookie = "KATO_IS_OPEN=" + window.name + ";path=/"; }; var iframeContainerInner = document.getElementById('katoContainerInner'); if (!iframeContainerInner) { var katoChat = document.createElement('span'); katoChat.innerHTML = "<div id='katoContainerInner' style='display: none;border-left:1px solid #333333;border-top:1px solid #333333;border-right:1px solid #333333;'><iframe style='height:380px; width:100%;' frameBorder='0' src='https://app.kato.im/public#/8dc247a6042247ec97aec4248101ba7f63dccc54c34dc66905c39584c1b816c'></iframe></div>"; katoContainer.insertBefore(katoChat, katoContainer.firstChild); doOpen(document.getElementById('katoContainerInner')); } else if (iframeContainerInner && iframeContainerInner.style.display === 'none') { doOpen(iframeContainerInner); } else if (iframeContainerInner) { el.innerHTML = KATO_ROOM_WHEN_CLOSED_BUTTON_TEXT; iframeContainerInner.style.display = 'none'; katoContainer.style.width = ''; katoContainer.style['min-width'] = ''; document.cookie = "KATO_IS_OPEN=" + window.name + ";expires=Thu, 01 Jan 1970 00:00:00 GMT"; } };
+var katoContainer = document.createElement('div');
+katoContainer.id = 'katoContainer';
+katoContainer.style.display = 'block';
+katoContainer.style.position = 'fixed';
+katoContainer.style.right = '20px';
+katoContainer.style.bottom = '0px';
+katoContainer.style['background-color'] = '#333333';
+katoContainer.style.border = '0';
+katoContainer.innerHTML = "<a style='font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; color: #fff; text-decoration: none; float: right; clear: both; margin: 8px 15px 10px 15px;' id='katoButton' href='#' onclick='toggleKatoRoom();'>" + KATO_ROOM_WHEN_CLOSED_BUTTON_TEXT + "</a>";
+document.body.appendChild(katoContainer);
+if (katoReadCookie('KATO_IS_OPEN') === window.name) { toggleKatoRoom(); }
+</script>
+
 </body>
 
 </html>

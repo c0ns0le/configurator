@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :authenticate_user!, :only => ['welcome']
 
 swagger_controller :organizations, "Organizations"
 
@@ -13,6 +14,8 @@ swagger_controller :organizations, "Organizations"
   end
  
 
+  def welcome
+  end
 
   # GET /organizations/1
   # GET /organizations/1.json

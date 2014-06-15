@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="">
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -28,12 +28,13 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Navigation <b class="caret"></b></a>
           <ul class="dropdown-menu">
+            
             <li> <li><%= link_to 'ConfigSets', config_sets_path  %></li></li>
             <li><%= link_to 'Organizations', organizations_path  %></li>
             <li><%= link_to 'ConfigValues', config_set_values_path  %></li>
             <li class="divider"></li>
-              <li><%= link_to "Interactive API Docs", '/api_docs' %></li>
-            <!-- <li><a href="#">Release Management</a></li> -->
+              <li><%= link_to "Interactive API Docs", '/api_docs', :target=>'_blank'  %></li>
+            <li><a href="#">Release Management</a></li>
             <li class="divider"></li>
             <li><a href="#">User Management</a></li>
           </ul>
@@ -63,6 +64,8 @@
     </div>
     </div>
 
+
+  <%= render 'layouts/chat_snippet' %>
 
 </body>
 </html>
