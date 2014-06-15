@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 def can_edit?
-  ['admin', 'security'].include?(self.role)
+  ['admin', 'security', 'psdev'].include?(self.role)
 end
 
 def can_rollback?
