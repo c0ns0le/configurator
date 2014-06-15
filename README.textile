@@ -3,16 +3,54 @@ h1. ConfigSmart
 This app was created as part of the 2014 Equifax Hackathon.
 
 The problem statement was to create a configuration management solution that 
-could support developers and system level configurations, as well as Client Services users 
+could support developers and app/system configurations, as well as Client Services users 
 that often add new customers and need to set preferences and configurations for them.
 
-h2. Play around
+h2. What we built
+
+We worked on the app from Thursday-Saturday, doing our best to keep other work priorities at bay (unsuccessfully as each
+member of the team was pulled away for big chunks of time).
+
+We focused on getting the data model working and on building a REST API so that systems could call into ConfigSmart
+and bulk load organizations, users or individual configs. We got a basic json API working pretty quickly, but we didn't 
+feel like we had the data model quite right. To be honest we spent a lot of time hashing it out and testing different scenarios.
+After some effort, we created a simple structure that met the needs of the Hackathon story requirements, while still having
+the level of flexibility and extendability that we figure an app like this would need in the wild.
+
+
+h2. Our Team Approach
+
+  We are all in different states, so we needed to stay in touch and also be able to work together easily.
+
+  We used 
+    Trello for tasks and backlog (we made our "storyboard":https://trello.com/b/P7AIWFAl/dev-work public so you could see the progression)
+   
+   Kato.im for team chat. Great interface and nice mobile app...cuz when you are doing a mad rush Hackathon, working at insane hours of the night,
+    you need to check in on the team at any random time!
+    Also Kato is so awesome when you hook it up with other great apps like Heroku, Github, Trello, travis, etc
+
+    Nitrous.io for pairing and testing. 
+    This way we knew that everyone was working in an up to date environment, and if anyone ran into an issue, we could all hop
+    on the box and get it figured out. (surprisingly most issues were entirely caused by lack of sleep and poor typing/spelling skillz)
+    Nitrous is also nice when you want to hit your API from an external site like jsbin or plunkr
+  
+h2. Play around With the ConfigSMART App
 
 The demo app is running live at "config-smart.herokuapp.com":http://config-smart.herokuapp.com
-Feel free to check it out, clone the repo and play around. (we will reset it back to the default every day)
+Feel free to check it out, add some orgs or configs, and play around. (we will reset it back to the default every day)
+(You don't have to sign up, just use the drop down of existing users)
+
+
+To get the full experience of how the configurations cascade, and how list items can be included or excluded from a parent org,
+you'll want to check out the json response. Once you're logged in, just add .json to the url to see the json output, 
+or look at the Interactive API Docs for a more info and a full interactive experience. ) 
 
 WE would love some feedback!
 You can join us in our public team chat (you'll see it at the bottom of the app)
+
+(p.s I was having the worst time getting "datatables":http://datatables.net/ to work with our json output. If anyone can clone
+the repo and show me how to get that set up (where it pulls the data in from json, and can post edits as well), you'll be my HERO!!
+
 
 h2. Clone and Run the Application
 
@@ -51,5 +89,8 @@ You don't have to create a user to test it out, just pick one from the drop down
 h2. What if that didn't work?
 
 Try Nitrous.io, everything works great on nitrous!
+
+Don't believe me? Fine, here's a quick "Screencast":http://screencast.com/t/6QyrlsKOy3fu I did to prove it. 
+Pretty sweet right?
 
 
