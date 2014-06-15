@@ -1,4 +1,7 @@
 class ConfigSet < ActiveRecord::Base
+
+  has_many :config_set_values
+
   TYPE_LIST = 'list'
   STATUS_ENABLED='enabled'
   def default_values

@@ -1,7 +1,7 @@
 class Organization < ActiveRecord::Base
   belongs_to :parent, class_name:'Organization' 
   has_many :children, class_name:'Organization', foreign_key: 'parent_id'
-  has_many :config_set_value
+  has_many :config_set_values
   
   def list_name
     "#{name}-#{city}"
