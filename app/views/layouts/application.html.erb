@@ -44,8 +44,18 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li><strong class="header_text">Change Test Role</strong> 
-                <%= switch_user_select %></li>
+          <li >
+  
+         <% if user_signed_in? %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+         <% else %>
+                <%= link_to "Sign up", new_user_registration_path %>
+          <% end %>
+          </li>       
+        <li style="padding-top: 15px; padding-bottom: 15px;">
+          <strong class="header_text">Change Test Role</strong> 
+            <%= switch_user_select %>
+          </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
