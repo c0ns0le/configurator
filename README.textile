@@ -1,0 +1,55 @@
+h1. ConfigSmart
+
+This app was created as part of the 2014 Equifax Hackathon.
+
+The problem statement was to create a configuration management solution that 
+could support developers and system level configurations, as well as Client Services users 
+that often add new customers and need to set preferences and configurations for them.
+
+h2. Play around
+
+The demo app is running live at "config-smart.herokuapp.com":http://config-smart.herokuapp.com
+Feel free to check it out, clone the repo and play around. (we will reset it back to the default every day)
+
+WE would love some feedback!
+You can join us in our public team chat (you'll see it at the bottom of the app)
+
+h2. Clone and Run the Application
+
+It'll help if you have ruby/rails/git already set up!
+
+<pre>
+$ git clone https://github.com/dacat/configurator.git
+$ cd configurator
+</pre>
+
+Now we need to install the dependencies (keep an eye on it, you might get an error at the top and not see it fly by)
+<pre>
+$ bundle install
+</pre>
+
+Let's get the db set up
+<pre>
+$ rake db:setup
+</pre>
+
+(well that was easy)
+
+Now let's fire up the server and kick the tires.
+<pre>
+$ rails server
+</pre>
+
+Check out the app at "http://localhost:3000/":http://localhost:3000.
+
+You don't have to create a user to test it out, just pick one from the drop down.
+(I don't want you to waste time typing in fake user info. Just get in there and break some stuff!!)
+
+
+...What?  the setup didn't go so well for you?
+
+h2. What if that didn't work?
+
+Try Nitrous.io, everything works great on nitrous!
+
+
